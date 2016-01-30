@@ -85,8 +85,6 @@ function displayBio() {
 		var welcome = HTMLWelcomeMsg.replace("%data%", bio.welcome);
 			$(".biopic").append(welcome);
 
-		// var skills = HTMLskills.replace("%data%", bio.skills);
-		// 	$("#skills").append(skills);
 };
 
 displayBio();
@@ -101,20 +99,12 @@ for (skill in bio.skills){
 
 	var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
 			$("#skills:last").append(formattedSkills);
-}
+
+	}
 };
 
 displaySkills();
 
-// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-// 	$("#skills").append(formattedSkill);
-// 	formattedSkill = HTMLskills.replace("%data%",bio.skills[1]);
-// 	$("#skills").append(formattedSkill);
-// 	formattedSkill = HTMLskills.replace("%data%",bio.skills[2]);
-// 	$("#skills").append(formattedSkill);
-// 	formattedSkill = HTMLskills.replace("%data%",bio.skills[3]);
-// 	$("#skills").append(formattedSkill);
-// };
 
 //Displays Work History
 
@@ -131,33 +121,30 @@ for (job in work.jobs){
 	var formattedEmployeeTitle = formattedEmployer + formattedTitle + formattedDates + formattedLocation + formattedDesrciption;
 
 	$(".work-entry:last").append(formattedEmployeeTitle);
-	//$("#work-location").append(formattedLocation);
-};
+
+	};
 };
 
 displayWork();
 
 
-projects.display = function() {
+function displayProjects() {
 	for (project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
 
 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].name);
-		$(".project-entry:last").append(formattedTitle);
-
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].year);
-		$(".project-entry:last").append(formattedDates);
-
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-		$(".project-entry:last").append(formattedDescription);
-
-		
 		var formattedimage = HTMLprojectImage.replace("%data%", projects.projects[project].url);
-		$(".project-entry:last").append(formattedimage);
 		
-	}
-}
-projects.display();
+		var formattedProjects = formattedTitle + formattedDates + formattedDescription + formattedimage;
+
+		$(".project-entry:last").append(formattedProjects);
+		
+	};
+};
+
+displayProjects();
 
 
 

@@ -1,10 +1,4 @@
-var name = "Aaron Butcher";
-var role = "Web Developer";
 
-var formattedName = HTMLheaderName.replace("%data%",name);
-
-var formattedRole = HTMLheaderRole.replace("%data%",role);
-$("#header").prepend(formattedName + formattedRole);
 
 
 var bio = {
@@ -64,10 +58,18 @@ var education = {
 			"name" : "Francis Tuttle",
 			"city" : "Oklahoma City, OK, US",
 			"majors" : "Web Developement",
-			"dates" : 2014,
+			"dates" : "2014",
 		}
 	]
 };
+
+var name = "Aaron Butcher";
+var role = "Web Developer";
+
+var formattedName = HTMLheaderName.replace("%data%",name);
+
+var formattedRole = HTMLheaderRole.replace("%data%",role);
+$("#header").prepend(formattedName + formattedRole);
 
 function displayBio() {
 
